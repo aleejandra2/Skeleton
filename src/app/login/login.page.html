@@ -1,6 +1,3 @@
-
-
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -8,20 +5,18 @@
     </ion-title>
     <ion-buttons slot="end">
       <ion-back-button default-href="#" routerLink="/home"></ion-back-button>
-      </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 
   <ion-toolbar>
-    <ion-segment value="Experiencia Laboral"
-     scrollable="true"
-    [(ngModel)]="segmentModel"
-    (ionChange)="segmentChanged($event)">
+    <ion-segment value="Experiencia Laboral" scrollable="true" [(ngModel)]="segmentModel"
+      (ionChange)="segmentChanged($event)">
 
-    <ion-segment-button value="Informacion Adicional">
-      <ion-label>Informacion Adicional</ion-label>
-    </ion-segment-button>
+      <ion-segment-button value="Informacion Adicional">
+        <ion-label>Informacion Adicional</ion-label>
+      </ion-segment-button>
 
-    <ion-segment-button value="Experiencia Laboral">
+      <ion-segment-button value="Experiencia Laboral">
         <ion-label>Experiencia Laboral</ion-label>
       </ion-segment-button>
 
@@ -34,56 +29,71 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" >
-  <div class="login-section ion-padding" >
+<ion-content [fullscreen]="true">
 
-    <div class="heading ion-padding" >
-      <h1 class="title-animation"> Bienvenido!</h1>
-      <p class="ion-text-start ion-margin"> Usuario: {{usuario}}</p>
-      <h1> Informacion Adicional</h1>
-    </div>
-    <div class="login-form ion-padding center">
-      <div class="form-input">
-          <ion-list>
-            <ion-item >
-              <ion-input label="Nombre" placeholder="Ingrese su nombre" [(ngModel)]="nombre"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input label="Apellido" placeholder="Ingrese su apellido" [(ngModel)]="apellido" ></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-select label="Nivel Educacional" placeholder="Seleccione Nivel" [multiple]="true" [(ngModel)]="nivelEducacional">
-                <ion-select-option value="bsc">Enseñanza Básica</ion-select-option>
-                <ion-select-option value="med">Enseñanza Media</ion-select-option>
-                <ion-select-option value="sup">Enseñanza Superior</ion-select-option>
-              </ion-select>
-            </ion-item>
-
-            <ion-item>
-              <mat-form-field>
-                <mat-label>MM/DD/YYYY</mat-label>
-                <input #fechaNacimiento matInput [matDatepicker]="picker">
-                <mat-hint>Fecha de nacimiento</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
-
-            </ion-item>
-
-
-          </ion-list>
-      </div>
-    </div>
-    <div class="action-button ion-padding">
-      <ion-button size="small" class="clean-button" slot="end" (click)="limpiar()" (click)="ejecutarAnimacion()">Limpiar</ion-button>
-      <ion-button size="small" class="show-button" id="present-alert" (click)="mostrar()">Mostrar</ion-button>
-
-    </div>
-
-  </div>
 
 
   <ion-content [fullscreen]="true" class="ion-padding">
+
+    <ion-card *ngIf="segmentModel === 'Informacion Adicional'">
+      <ion-card-header>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="login-section ion-padding">
+
+          <div class="heading ion-padding">
+            <h1 class="title-animation"> Bienvenido!</h1>
+            <p class="ion-text-start ion-margin"> Usuario: {{usuario}}</p>
+            <h1> Informacion Adicional</h1>
+          </div>
+          <div class="login-form ion-padding center">
+            <div class="form-input">
+              <ion-list>
+                <ion-item>
+                  <ion-input label="Nombre" placeholder="Ingrese su nombre" [(ngModel)]="nombre"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input label="Apellido" placeholder="Ingrese su apellido" [(ngModel)]="apellido"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-select label="Nivel Educacional" placeholder="Seleccione Nivel" [multiple]="true"
+                    [(ngModel)]="nivelEducacional">
+                    <ion-select-option value="bsc">Enseñanza Básica</ion-select-option>
+                    <ion-select-option value="med">Enseñanza Media</ion-select-option>
+                    <ion-select-option value="sup">Enseñanza Superior</ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item>
+                  <mat-form-field>
+                    <mat-label>MM/DD/YYYY</mat-label>
+                    <input #fechaNacimiento matInput [matDatepicker]="picker">
+                    <mat-hint>Fecha de nacimiento</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+
+                </ion-item>
+
+
+              </ion-list>
+            </div>
+          </div>
+          <div class="action-button ion-padding">
+            <ion-button size="small" class="clean-button" slot="end" (click)="limpiar()"
+              (click)="ejecutarAnimacion()">Limpiar</ion-button>
+            <ion-button size="small" class="show-button" id="present-alert" (click)="mostrar()">Mostrar</ion-button>
+
+          </div>
+
+        </div>
+
+
+
+
+
+      </ion-card-content>
+    </ion-card>
 
     <ion-card *ngIf="segmentModel === 'Experiencia Laboral'">
       <ion-card-header>
@@ -161,4 +171,3 @@
 
 
 </ion-content>
-
