@@ -1,0 +1,112 @@
+ion-content{
+  --background: url(../../assets/imagenes/Sakura.jpg) no-repeat center/cover fixed;
+}
+// .scroll-content {
+
+// }
+
+.login-section{
+  height: 80vh;
+  width: 95%;
+  max-width: 450px;
+  background: #ffffff9a;
+  right: 0;
+  left: 0;
+  bottom: 50px;
+  position: fixed;
+  margin: auto;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+  .heading{
+
+      text-align: center;
+      h1{
+          font-size: 1.6rem;
+          font-weight: bolder;
+      }
+      h6{
+          font-size: 1.2rem;
+      }
+      p{
+          margin-top: 20px;
+          font-size: 1rem;
+          color: #7b7b7b;
+      }
+  }
+  .login-form{
+      .form-input{
+          margin-bottom: 10px;
+          ion-item::part(native){
+              padding-left: 0;
+          }
+          ion-list{
+              position: relative;
+              margin-left: 20px;
+              font-weight: bolder;
+              font-size: 0.8rem;
+          }
+      }
+  }
+
+  .action-button{
+      text-align: center;
+      .show-button{
+          --background: #f6c8c7;
+          color: #141414;
+          font-weight: bold;
+      }
+      .clean-button{
+          --background: #f6c8c7;
+          color: #141414;
+          font-weight: bold;
+      }
+      .login-button{
+          --background: #f6c8c7;
+          color: #141414;
+          font-weight: bold;
+      }
+
+  }
+
+}
+
+@keyframes MoverAlCentro {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateX(50%);
+  }
+  }
+
+@keyframes MoverAlCentro {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateX(-50%);
+  }
+  }
+.title-animation {
+  animation: MoverAlCentro 2.5s infinite alternate, slideToCenter 2.5s infinite alternate;
+}
+
+.ion-color-rose {
+  --ion-color-base: var(--ion-color-rose);
+  --ion-color-base-rgb: var(--ion-color-rose-rgb);
+  --ion-color-contrast: var(--ion-color-rose-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
+  --ion-color-shade: var(--ion-color-rose-shade);
+  --ion-color-tint: var(--ion-color-rose-tint);
+}
+
+ion-datetime {
+  --background: #fff1f2;
+  --background-rgb: 255, 241, 242;
+
+  border-radius: 16px;
+  box-shadow: rgba(var(--ion-color-rose-rgb), 0.3) 0px 10px 15px -3px;
+}

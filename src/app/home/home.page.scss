@@ -1,27 +1,75 @@
-#container {
-  text-align: center;
+ion-content{
+  --background: url(../../assets/imagenes/Sakura.jpg) no-repeat center/cover fixed;
+}
 
-  position: absolute;
-  left: 0;
+.scroll-content {
+  max-height: calc(100vh - 56px); /* Ajusta el valor según tu barra de herramientas */
+  overflow-y: auto;
+}
+
+
+.home-section{
+  height: 80vh;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  margin: auto;
+  border-top-left-radius: 46px;
+  border-top-right-radius: 46px;
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  .heading{
+      margin-top: 20px;
+      text-align: center;
+      h1{
+          font-size: 1.6rem;
+          font-weight: bolder;
+      }
+      p{
+          margin-top: 20px;
+          font-size: 1rem;
+          color: #7b7b7b;
+      }
+  }
+  .home-form{
+      .form-input{
+          position: relative;
+          margin-bottom: 10px;
+          ion-item::part(native){
+              padding-left: 0;
+          }
+          ion-label{
+              position: absolute;
+              margin-left: 20px;
+              font-weight: bolder;
+              font-size: 0.8rem;
+              top: 3px;
+          }
+          ion-input{
+              font-size: 0.9rem;
+              --pading-start: 36px;
+              --padding-top: 36px;
+              color: #7b7b7b;
+          }
+      }
+  }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  .action-button{
+      text-align: center;
+      .home-button{
+          --background: #f6c8c7;
+          color: black;
+          width: 75%;
+          font-weight: bold;
+      }
+      p{
+          margin-top: 10px;
+          font-size: 1rem;
+          color: #7b7b7b;
+      }
+  }
 
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
 }
