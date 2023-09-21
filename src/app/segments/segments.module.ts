@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SegementsPageRoutingModule } from './segements-routing.module';
+import { SegmentsPageRoutingModule } from './segments-routing.module';
 
-import { SegementsPage } from './segements.page';
+import { SegmentsPage } from './segments.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SegementsPageRoutingModule
+    SegmentsPageRoutingModule
   ],
-  declarations: [SegementsPage]
+  declarations: [SegmentsPage]
 })
-export class SegementsPageModule {}
+export class SegmentsPageModule {}

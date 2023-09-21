@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ionic Segments
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button default-href="#" routerLink="/home"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-segment value="Experiencia Laboral"
+     scrollable="true"
+    [(ngModel)]="segmentModel"
+    (ionChange)="segmentChanged($event)">
+
+    <ion-segment-button value="Experiencia Laboral">
+        <ion-label>Experiencia Laboral</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="Certificaciones">
+        <ion-label>Certificaciones</ion-label>
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-card *ngIf="segmentModel === 'Experiencia Laboral'">
+    <ion-card-header>
+      <ion-card-title>Experiencia Laboral</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item>
+        <ion-input label="Empresa" placeholder="Ex: Duoc"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Año Inicio</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime presentation="date" id="datetime" [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentModel === 'Certificaciones'">
+    <ion-card-header>
+      <ion-card-title>Favorites</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+</ion-content>

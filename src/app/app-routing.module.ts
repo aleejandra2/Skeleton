@@ -20,14 +20,15 @@ const routes: Routes = [
     loadChildren: () => import('./e404/e404.module').then( m => m.E404PageModule)
   },
   {
+    path: 'segments',
+    loadChildren: () => import('./segments/segments.module').then( m => m.SegmentsPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'e404',
     pathMatch: 'full'
   },
-  {
-    path: 'segements',
-    loadChildren: () => import('./segements/segements.module').then( m => m.SegementsPageModule)
-  },
+
 ];
 
 @NgModule({
