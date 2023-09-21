@@ -48,7 +48,23 @@
         </ion-modal>
       </ion-item>
 
+      <ion-item>
+        <ion-checkbox labelPlacement="start"> Trabaja en esa empresa </ion-checkbox>
+      </ion-item>
 
+      <ion-item>
+        <ion-label>Año Termino</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime presentation="date" id="datetime" [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Cargo" placeholder="Ex: CEO"></ion-input>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 
@@ -57,8 +73,31 @@
       <ion-card-title>Favorites</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+
+      <ion-item>
+        <ion-input label="Nombre del certificado" placeholder="Ex: CEO"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Fecha de obtencion</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime presentation="date" id="datetime" [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Fecha de vencimiento</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime presentation="date" id="datetime" [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
     </ion-card-content>
   </ion-card>
 </ion-content>

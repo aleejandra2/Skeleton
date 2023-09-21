@@ -13,6 +13,8 @@ import { MatInput } from '@angular/material/input';
 })
 export class LoginPage implements OnInit {
 
+  segmentModel = "favorites";
+
   @ViewChildren(IonInput, { read: ElementRef }) inputs!: QueryList<ElementRef>;
   @ViewChild('fechaNacimiento', { read: MatInput }) fechaNacimiento!: MatInput;
 
@@ -94,4 +96,8 @@ export class LoginPage implements OnInit {
         });
       }
 
+      segmentChanged(event: any){
+        console.log(this.segmentModel);
+        console.log(event);
+      }
 }
