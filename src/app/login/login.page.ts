@@ -13,7 +13,9 @@ import { MatInput } from '@angular/material/input';
 })
 export class LoginPage implements OnInit {
 
-  segmentModel = "Informacion Adicional";
+  // segmentModel = "Experiencia Laboral";
+  segmentModel = "Experiencia Laboral";
+
 
   @ViewChildren(IonInput, { read: ElementRef }) inputs!: QueryList<ElementRef>;
   @ViewChild('fechaNacimiento', { read: MatInput }) fechaNacimiento!: MatInput;

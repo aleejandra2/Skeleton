@@ -1,21 +1,61 @@
 ion-content{
   --background: url(../../assets/imagenes/Sakura.jpg) no-repeat center/cover fixed;
-
-  .action-button{
-    text-align: center;
-    .show-button{
-        --background: #f6c8c7;
-        color: #141414;
-        font-weight: bold;
-    }
-    .clean-button{
-        --background: #f6c8c7;
-        color: #141414;
-        font-weight: bold;
-    }
-
-  }
 }
+
+
+.exp{
+  text-align: center;
+      h1{
+          font-family: 'Times New Roman';
+          font-size: 1.6rem;
+          font-weight: bolder;
+      }
+
+}
+
+.Certificaciones{
+  text-align: center;
+
+      h1{
+          font-family: 'Times New Roman';
+          font-size: 1.6rem;
+          font-weight: bolder;
+      }
+}
+
+.datos{
+  text-align: center;
+
+      h1{
+          font-family: 'Times New Roman';
+          font-size: 1.6rem;
+          font-weight: bolder;
+      }
+      p{
+        font-family: monospace;
+          font-size: 1rem;
+          font-weight: bolder;
+      }
+      .action-button{
+        text-align: center;
+        .show-button{
+            --background: #f6c8c7;
+            color: #141414;
+            font-weight: bold;
+        }
+        .clean-button{
+            --background: #f6c8c7;
+            color: #141414;
+            font-weight: bold;
+        }
+
+      }
+}
+
+
+
+
+
 
 @keyframes MoverAlCentro {
   0%, 100% {
@@ -35,12 +75,13 @@ ion-content{
     opacity: 0.2;
     transform: translateX(-50%);
   }
-  }
-.title-animation {
-  animation: MoverAlCentro 2.5s infinite alternate, slideToCenter 2.5s infinite alternate;
-  text-align: center;
-  font-weight: bold;
 }
+
+// .title-animation {
+//   animation: MoverAlCentro 2.5s infinite alternate, slideToCenter 2.5s infinite alternate;
+//   text-align: center;
+//   font-weight: bold;
+// }
 
 .ion-color-rose {
   --ion-color-base: var(--ion-color-rose);
