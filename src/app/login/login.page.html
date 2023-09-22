@@ -4,12 +4,12 @@
       Ionic Segments
     </ion-title>
     <ion-buttons slot="end">
-      <ion-back-button default-href="#" routerLink="/home"></ion-back-button>
+      <ion-back-button href="#" routerLink="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 
   <ion-toolbar>
-    <ion-segment value="Experiencia Laboral" scrollable="true" [(ngModel)]="segmentModel"
+    <ion-segment value="Informacion Adicional" scrollable="true" [(ngModel)]="segmentModel"
       (ionChange)="segmentChanged($event)">
 
       <ion-segment-button value="Informacion Adicional">
@@ -32,23 +32,18 @@
 <ion-content [fullscreen]="true">
 
 
-
-  <ion-content [fullscreen]="true" class="ion-padding">
-
     <ion-card *ngIf="segmentModel === 'Informacion Adicional'">
-      <ion-card-header>
-      </ion-card-header>
       <ion-card-content>
-        <div class="login-section ion-padding">
 
-          <div class="heading ion-padding">
             <h1 class="title-animation"> Bienvenido!</h1>
+
+
             <p class="ion-text-start ion-margin"> Usuario: {{usuario}}</p>
+
+          <ion-item>
             <h1> Informacion Adicional</h1>
-          </div>
-          <div class="login-form ion-padding center">
-            <div class="form-input">
-              <ion-list>
+          </ion-item>
+
                 <ion-item>
                   <ion-input label="Nombre" placeholder="Ingrese su nombre" [(ngModel)]="nombre"></ion-input>
                 </ion-item>
@@ -74,19 +69,14 @@
                   </mat-form-field>
 
                 </ion-item>
+          <ion-item>
+            <div class="action-button ion-padding">
+              <ion-button size="small" class="clean-button" slot="end" (click)="limpiar()"
+                (click)="ejecutarAnimacion()">Limpiar</ion-button>
+              <ion-button size="small" class="show-button" id="present-alert" (click)="mostrar()">Mostrar</ion-button>
 
-
-              </ion-list>
             </div>
-          </div>
-          <div class="action-button ion-padding">
-            <ion-button size="small" class="clean-button" slot="end" (click)="limpiar()"
-              (click)="ejecutarAnimacion()">Limpiar</ion-button>
-            <ion-button size="small" class="show-button" id="present-alert" (click)="mostrar()">Mostrar</ion-button>
-
-          </div>
-
-        </div>
+          </ion-item>
 
 
 
@@ -137,7 +127,7 @@
 
     <ion-card *ngIf="segmentModel === 'Certificaciones'">
       <ion-card-header>
-        <ion-card-title>Favorites</ion-card-title>
+        <ion-card-title>Certificaciones</ion-card-title>
       </ion-card-header>
       <ion-card-content>
 
@@ -168,6 +158,3 @@
       </ion-card-content>
     </ion-card>
   </ion-content>
-
-
-</ion-content>

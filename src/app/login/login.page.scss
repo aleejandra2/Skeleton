@@ -1,74 +1,19 @@
 ion-content{
   --background: url(../../assets/imagenes/Sakura.jpg) no-repeat center/cover fixed;
-}
-// .scroll-content {
-
-// }
-
-.login-section{
-  height: 80vh;
-  width: 95%;
-  max-width: 450px;
-  background: #ffffff9a;
-  right: 0;
-  left: 0;
-  bottom: 50px;
-  position: fixed;
-  margin: auto;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-
-  .heading{
-
-      text-align: center;
-      h1{
-          font-size: 1.6rem;
-          font-weight: bolder;
-      }
-      h6{
-          font-size: 1.2rem;
-      }
-      p{
-          margin-top: 20px;
-          font-size: 1rem;
-          color: #7b7b7b;
-      }
-  }
-  .login-form{
-      .form-input{
-          margin-bottom: 10px;
-          ion-item::part(native){
-              padding-left: 0;
-          }
-          ion-list{
-              position: relative;
-              margin-left: 20px;
-              font-weight: bolder;
-              font-size: 0.8rem;
-          }
-      }
-  }
-
   .action-button{
-      text-align: center;
-      .show-button{
-          --background: #f6c8c7;
-          color: #141414;
-          font-weight: bold;
-      }
-      .clean-button{
-          --background: #f6c8c7;
-          color: #141414;
-          font-weight: bold;
-      }
-      .login-button{
-          --background: #f6c8c7;
-          color: #141414;
-          font-weight: bold;
-      }
+    text-align: center;
+    .show-button{
+        --background: #f6c8c7;
+        color: #141414;
+        font-weight: bold;
+    }
+    .clean-button{
+        --background: #f6c8c7;
+        color: #141414;
+        font-weight: bold;
+    }
 
   }
-
 }
 
 @keyframes MoverAlCentro {
@@ -92,6 +37,8 @@ ion-content{
   }
 .title-animation {
   animation: MoverAlCentro 2.5s infinite alternate, slideToCenter 2.5s infinite alternate;
+  text-align: center;
+  font-weight: bold;
 }
 
 .ion-color-rose {
