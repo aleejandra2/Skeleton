@@ -11,6 +11,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+
   {
     path: 'login/:username',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -28,6 +29,7 @@ const routes: Routes = [
     redirectTo: 'e404',
     pathMatch: 'full'
   },
+
 
 ];
 
