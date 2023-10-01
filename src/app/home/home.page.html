@@ -8,7 +8,7 @@
     <div class="home-form ion-padding center">
       <div class="form-input">
         <ion-item>
-          <ion-label position="floating"> Usuario</ion-label>
+          <!-- <ion-label position="floating"> Usuario</ion-label>
           <ion-input
           type="user"
           class=""
@@ -19,12 +19,17 @@
           maxlength="8"
           [(ngModel)]="usuario"
           required
-          ></ion-input>
+          ></ion-input> -->
+          <ion-item>
+            <ion-label position="stacked">Usuario</ion-label>
+            <ion-input [(ngModel)]="usuario" placeholder="Ingrese su usuario"></ion-input>
+          </ion-item>
+          <div class="error-message">{{ getUsernameErrorMessage() }}</div>
         </ion-item>
       </div>
       <div class="form-input">
         <ion-item>
-          <ion-label position="floating"> Contraseña</ion-label>
+          <!-- <ion-label position="floating"> Contraseña</ion-label>
           <ion-input
           type="password"
           [counter]="true"
@@ -33,16 +38,21 @@
           maxlength="4"
           pattern="[0-9]*"
           ngModel
-          #contrasenia="ngModel"
+          [(ngModel)]="contrasenia"
           errorText="Contraseña inválida"
           helperText="Ingrese contraseña"
           required
-          ></ion-input>
+          ></ion-input> -->
+          <ion-item>
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="contrasenia" placeholder="Ingrese su contraseña" maxlength="4" pattern="[0-9]*"></ion-input>
+          </ion-item>
+          <div class="error-message">{{ getPasswordErrorMessage() }}</div>
         </ion-item>
       </div>
     </div>
     <div class="action-button ion-padding">
-      <ion-button (click)="guardar()" size="small" class="home-button" [disabled]="usuario.length < 3 || usuario.length > 8 || contrasenia.invalid || contrasenia.value.length !== 4"> Ingresar</ion-button>
+      <ion-button (click)="login()" size="small" class="home-button"> Ingresar</ion-button>
       <p></p>
     </div>
   </div>
