@@ -62,6 +62,26 @@ ion-content{
       }
 }
 
+.Api{
+  text-align: center;
+      h1{
+          font-family: 'Times New Roman';
+          font-size: 1.6rem;
+          font-weight: bolder;
+      }
+      p{
+        font-family: monospace;
+          font-size: 1rem;
+          font-weight: bolder;
+      }
+      .home-button{
+        --background: #f6c8c7;
+        color: black;
+        width: 75%;
+        font-weight: bold;
+      }
+
+}
 
 
 

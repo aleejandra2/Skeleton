@@ -37,5 +37,10 @@ export class HomePage {
     return '';
   }
 
+  // Api() {
+  //   this.router.navigate(['/busqueda-api']);
+  // }
+
+
 }
 

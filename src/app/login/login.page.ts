@@ -6,6 +6,7 @@ import { AlertController, AnimationController, IonInput } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { MatInput } from '@angular/material/input';
 
+import { BusquedaApiService } from '../busqueda-api.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,9 +14,11 @@ import { MatInput } from '@angular/material/input';
 })
 export class LoginPage implements OnInit {
 
-  // segmentModel = "Experiencia Laboral";
   segmentModel = "Experiencia Laboral";
 
+  datosRegiones: any[] = [];
+  idRegion: number = 1;
+  nombreRegion: string = '';
 
   @ViewChildren(IonInput, { read: ElementRef }) inputs!: QueryList<ElementRef>;
   @ViewChild('fechaNacimiento', { read: MatInput }) fechaNacimiento!: MatInput;
@@ -27,7 +30,8 @@ export class LoginPage implements OnInit {
   constructor(
       private alertController: AlertController,
       private animationCtrl: AnimationController,
-      private activatedRoute: ActivatedRoute
+      private activatedRoute: ActivatedRoute,
+      private busquedaApiService:BusquedaApiService
       ) { }
 
       usuario:string ='';
@@ -49,6 +53,16 @@ export class LoginPage implements OnInit {
 
       ngOnInit() {
         this.mostrarUsuario();
+        this.busquedaApiService.getDatos().subscribe((response) => {
+          // Asegúrate de que la estructura de la respuesta sea correcta
+          if (response.success && Array.isArray(response.data)) {
+            this.datosRegiones = response.data;
+            // Realiza una búsqueda inicial solo después de cargar los datos
+            this.buscar();
+          } else {
+            this.nombreRegion = 'Datos de región no disponibles';
+          }
+        });
 
       }
       limpiar(){
@@ -101,5 +115,15 @@ export class LoginPage implements OnInit {
       segmentChanged(event: any){
         console.log(this.segmentModel);
         console.log(event);
+      }
+      buscar() {
+        // Busca el nombre de la región correspondiente al ID deseado
+        const regionEncontrada = this.datosRegiones.find(region => region.id === this.idRegion);
+
+        if (regionEncontrada) {
+          this.nombreRegion = regionEncontrada.nombre;
+        } else {
+          this.nombreRegion = 'Región no encontrada';
+        }
       }
 }

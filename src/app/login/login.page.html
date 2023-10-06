@@ -11,13 +11,16 @@
   <ion-toolbar>
     <ion-segment [(ngModel)]="segmentModel">
       <ion-segment-button value="Experiencia Laboral">
-        Experiencia Laboral
+        Exp. Laboral
       </ion-segment-button>
       <ion-segment-button value="Certificaciones">
         Certificaciones
       </ion-segment-button>
       <ion-segment-button value="Mis Datos">
         Mis Datos
+      </ion-segment-button>
+      <ion-segment-button value="Busqueda">
+        Busqueda
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -65,84 +68,115 @@
   </div>
 
   <div class="Certificaciones" *ngIf="segmentModel === 'Certificaciones'">
-<div class="Certificaciones">
+    <div class="Certificaciones">
 
-  <h1>Certificaciones</h1>
+      <h1>Certificaciones</h1>
 
-  <p class="ion-text-start ion-margin">Usuario: {{usuario}}</p>
+      <p class="ion-text-start ion-margin">Usuario: {{usuario}}</p>
 
-    <ion-item>
-      <ion-input label="Nombre del certificado" placeholder="Ex: CEO"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input label="Nombre del certificado" placeholder="Ex: CEO"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>Fecha de obtencion</ion-label>
-      <ion-datetime-button datetime="datetime"></ion-datetime-button>
-      <ion-modal [keepContentsMounted]="true">
-        <ng-template>
-          <ion-datetime presentation="date" id="datetime" [showDefaultButtons]="true"></ion-datetime>
-        </ng-template>
-      </ion-modal>
-    </ion-item>
+      <ion-item>
+        <ion-label>Fecha de obtencion</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime presentation="date" id="datetime" [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>Fecha de vencimiento</ion-label>
-      <ion-datetime-button datetime="datetime"></ion-datetime-button>
-      <ion-modal [keepContentsMounted]="true">
-        <ng-template>
-          <ion-datetime presentation="date" id="datetime" [showDefaultButtons]="true"></ion-datetime>
-        </ng-template>
-      </ion-modal>
-    </ion-item>
+      <ion-item>
+        <ion-label>Fecha de vencimiento</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime presentation="date" id="datetime" [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
 
-</div>
-
-
+    </div>
   </div>
 
   <div *ngIf="segmentModel === 'Mis Datos'">
 
-  <div class="datos">
+    <div class="datos">
 
-    <h1>Informacion Adicional</h1>
-    <p class="ion-text-start ion-margin">Usuario: {{usuario}}</p>
+      <h1>Informacion Adicional</h1>
+      <p class="ion-text-start ion-margin">Usuario: {{usuario}}</p>
 
-    <ion-item>
-      <ion-input label="Nombre" placeholder="Ingrese su nombre" [(ngModel)]="nombre"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input label="Nombre" placeholder="Ingrese su nombre" [(ngModel)]="nombre"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input label="Apellido" placeholder="Ingrese su apellido" [(ngModel)]="apellido"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input label="Apellido" placeholder="Ingrese su apellido" [(ngModel)]="apellido"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-select label="Nivel Educacional" placeholder="Seleccione Nivel" [multiple]="true"
-        [(ngModel)]="nivelEducacional">
-        <ion-select-option value="bsc">Enseñanza Básica</ion-select-option>
-        <ion-select-option value="med">Enseñanza Media</ion-select-option>
-        <ion-select-option value="sup">Enseñanza Superior</ion-select-option>
-      </ion-select>
-    </ion-item>
+      <ion-item>
+        <ion-select label="Nivel Educacional" placeholder="Seleccione Nivel" [multiple]="true"
+          [(ngModel)]="nivelEducacional">
+          <ion-select-option value="bsc">Enseñanza Básica</ion-select-option>
+          <ion-select-option value="med">Enseñanza Media</ion-select-option>
+          <ion-select-option value="sup">Enseñanza Superior</ion-select-option>
+        </ion-select>
+      </ion-item>
 
-    <ion-item>
-      <mat-form-field>
-        <mat-label>MM/DD/YYYY</mat-label>
-        <input #fechaNacimiento matInput [matDatepicker]="picker">
-        <mat-hint>Fecha de nacimiento</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-    </ion-item>
+      <ion-item>
+        <mat-form-field>
+          <mat-label>MM/DD/YYYY</mat-label>
+          <input #fechaNacimiento matInput [matDatepicker]="picker">
+          <mat-hint>Fecha de nacimiento</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </ion-item>
 
-    <ion-item>
-      <div class="action-button ion-padding">
-        <ion-button size="small" class="clean-button" slot="end" (click)="limpiar()"
-          (click)="ejecutarAnimacion()">Limpiar</ion-button>
-        <ion-button size="small" class="show-button" id="present-alert" (click)="mostrar()">Mostrar</ion-button>
-      </div>
-    </ion-item>
+      <ion-item>
+        <div class="action-button ion-padding">
+          <ion-button size="small" class="clean-button" slot="end" (click)="limpiar()"
+            (click)="ejecutarAnimacion()">Limpiar</ion-button>
+          <ion-button size="small" class="show-button" id="present-alert" (click)="mostrar()">Mostrar</ion-button>
+        </div>
+      </ion-item>
+
+    </div>
 
   </div>
+
+  <div *ngIf="segmentModel === 'Busqueda'">
+
+    <div class="Api">
+      <h1>Busqueda de Regiones</h1>
+      <p class="ion-text-start ion-margin">Usuario: {{usuario}}</p>
+
+
+      <ion-item>
+        <ion-label position="stacked">ID de la región</ion-label>
+        <ion-input [(ngModel)]="idRegion" type="number" placeholder="Ingrese el ID"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-button (click)="buscar()" size="small" class="home-button">Buscar</ion-button>
+      </ion-item>
+
+      <ion-list *ngIf="nombreRegion">
+        <ion-item>
+          <ion-label>ID de la región:</ion-label>
+          <ion-label>{{ idRegion }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nombre de la región:</ion-label>
+          <ion-label>{{ nombreRegion }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <!-- Mensaje si no hay datos disponibles -->
+      <ion-label *ngIf="!nombreRegion">Sin datos disponibles</ion-label>
+    </div>
 
   </div>
 </ion-content>
